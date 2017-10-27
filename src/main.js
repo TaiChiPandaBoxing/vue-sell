@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import '@/common/stylus/index.styl'
 /* eslint-disable no-unused-vars */
-import vConsole from 'vconsole'
+// import vConsole from 'vconsole'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
