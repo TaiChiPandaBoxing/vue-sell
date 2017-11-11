@@ -122,14 +122,17 @@ export default {
       this.selectedFood = food
       this.$refs.food.show()
     },
+    // addFood (target) {
+    //   this._drop(target)
+    // },
     // 子组件事件触发
-    // _drop(target) {
-        // 体验优化，异步执行下落动画
-    //    this.$nextTick(() => {
-            // 父组件传递给子组件
-    //        this.$refs.shopcart.drop(target);
-    //    })
-    // }
+    // _drop (target) {
+    //     // 体验优化，异步执行下落动画
+    //   this.$nextTick(() => {
+    //     // 父组件传递给子组件
+    //     this.$refs.shopcart.drop(target)
+    //   })
+    // },
     _initScroll () {
       this.menuScroll = new BScroll(this.$refs.menuWrapper, {
         click: true

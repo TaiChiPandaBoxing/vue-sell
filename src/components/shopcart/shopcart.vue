@@ -178,16 +178,17 @@ export default {
         }
       }
     },
-    enter (el) {
+    enter (el, done) {
       // 触发浏览器重绘 这一步很重要
       /* eslint-disable no-unused-vars */
       let rf = el.offsetHeight
       this.$nextTick(() => {
-        el.style.webkitTransform = 'translate3d(0,0, 0)'
+        el.style.webkitTransform = 'translate3d(0, 0, 0)'
         el.style.transform = 'translate3d(0, 0, 0)'
         let inner = el.getElementsByClassName('inner-hook')[0]
         inner.style.webkitTransform = 'translate3d(0, 0, 0)'
         inner.style.transform = 'translate3d(0, 0, 0)'
+        el.addEventListener('transitionend', done)
       })
     },
     afterEnter (el) {
@@ -216,6 +217,9 @@ export default {
         return
       }
       window.alert(`支付${this.totalPrice}元`)
+    },
+    addFood (target) {
+      this.drop(target)
     }
   },
   components: {
