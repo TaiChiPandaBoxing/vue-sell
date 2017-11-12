@@ -92,22 +92,25 @@ export default {
   mounted () {
     setTimeout(() => {
       this._initScroll()
+      this._initPics()
     }, 20)
-    this._initPics()
+    // this._initScroll()
+    // this._initPics()
   },
   computed: {
     favoriteText () {
       return this.favorite ? '已收藏' : '收藏'
     }
   },
-  watch: {
-    'seller' () {
-      this._initScroll()
-      this._initPics()
-    }
-  },
+  // watch: {
+  //   'seller' () {
+  //     this._initScroll()
+  //     this._initPics()
+  //   }
+  // },
   methods: {
     _initScroll () {
+      // 页面整体滚动
       if (!this.scroll) {
         this.scroll = new BScroll(this.$refs.seller, {
           click: true
@@ -117,6 +120,7 @@ export default {
       }
     },
     _initPics () {
+      // 商家图片横向滚动
       if (this.seller.pics) {
         let picWidth = 120
         let margin = 6

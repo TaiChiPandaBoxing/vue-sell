@@ -94,6 +94,7 @@ export default {
             click: true
           })
         } else {
+          // 重新计算
           this.scroll.refresh()
         }
       })
@@ -133,6 +134,21 @@ export default {
       })
     }
   },
+  // created () {
+  //   // 获取子组件的selectType的更新
+  //   Bus.$on('ratingtype.select', selectType => {
+  //     this.selectType = selectType
+  //     this.$nextTick(() => {
+  //       this.scroll.refresh()
+  //     })
+  //   })
+  //   Bus.$on('content.toggle', onlyContent => {
+  //     this.onlyContent = onlyContent
+  //     this.$nextTick(() => {
+  //       this.scroll.refresh()
+  //     })
+  //   })
+  // },
   filters: {
     formatDate (time) {
       let date = new Date(time)

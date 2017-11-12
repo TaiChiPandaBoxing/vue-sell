@@ -20,7 +20,7 @@ export default {
       seller: {
         id: (() => {
           let queryParam = urlParse()
-          console.log(queryParam)
+          // console.log(queryParam)
           return queryParam.id
         })()
       }

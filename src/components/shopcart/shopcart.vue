@@ -139,6 +139,7 @@ export default {
               click: true
             })
           } else {
+            // 重新计算better-scroll高度
             this.scroll.refresh()
           }
         })

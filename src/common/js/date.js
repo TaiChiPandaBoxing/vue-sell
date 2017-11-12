@@ -1,3 +1,9 @@
+/**
+ * 日期格式化
+ * @param date 时间戳
+ * @param fmt  格式化格式
+ * @returns {*}
+ */
 export function formatDate (date, fmt) {
   if (/(y+)/.test(fmt)) {
     fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
@@ -17,6 +23,7 @@ export function formatDate (date, fmt) {
   }
   return fmt
 }
+// 补0
 function padLeftZero (string) {
   return ('00' + string).substr(string.length)
 }

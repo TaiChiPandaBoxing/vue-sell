@@ -1,3 +1,9 @@
+/**
+ * 存储数据到localStorage中
+ * @param id   用户店面id
+ * @param key  健
+ * @param value  值
+ */
 export function saveToLocal (id, key, value) {
   let seller = window.localStorage.__seller__
   if (!seller) {
@@ -13,15 +19,23 @@ export function saveToLocal (id, key, value) {
   localStorage.__seller__ = JSON.stringify(seller)
 };
 
+/**
+ * 从localStorage中取值
+ * @param id   用户店面id
+ * @param key  健
+ * @param def  默认值
+ */
 export function loadFromLocal (id, key, def) {
   let seller = window.localStorage.__seller__
   if (!seller) {
     return def
   }
   seller = JSON.parse(seller)[id]
+  // 判断是否有此商家
   if (!seller) {
     return def
   }
+  // 判断是否有这个 key
   let ret = seller[key]
   return ret || def
 }

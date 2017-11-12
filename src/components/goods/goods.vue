@@ -113,6 +113,7 @@ export default {
       }
       const foodList = this.$refs.foodGroup
       let el = foodList[index]
+      // 调用better-scroll 方法滚动到响应位置
       this.foodsScroll.scrollToElement(el, 300)
     },
     selectFood (food, event) {

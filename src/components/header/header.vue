@@ -37,6 +37,7 @@
             <div class="star-wrapper">
               <v-star :size="48" :score="seller.score"></v-star>
             </div>
+            <!--flex 布局-->
             <div class="title">
               <div class="line"></div>
               <div class="text">优惠信息</div>

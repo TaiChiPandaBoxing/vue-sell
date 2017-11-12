@@ -34,6 +34,7 @@ export default {
       Bus.$emit('cart.add', event.target)
     },
     decreaseCart (event) {
+      // 防止多次被点击
       if (!event._constructed) {
         return
       }
